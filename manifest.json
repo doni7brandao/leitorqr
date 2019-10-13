@@ -1,7 +1,7 @@
 {
-  "short_name": "QR Scanner",
-  "name": "QR Code Scanner",
-  "description": "QR code scanner progressive web application",
+  "short_name": "Leitor QR",
+  "name": "Leitor QR",
+  "description": "Leitor QR Code com PWA - Progressive Web Application",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
