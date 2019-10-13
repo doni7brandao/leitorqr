@@ -1,75 +1,32 @@
-var files = [
-  "index.html",
-  "manifest.json",
-  "styles.css",
-  "files.json",
-  "main.201113f887d44acdfa77.bundle.js",
-  "decoder.js",
-  "images/photo-camera.svg",
-  "images/template.png",
-  "images/touch/android-chrome-192x192.png",
-  "images/touch/android-chrome-512x512.png",
-  "images/touch/apple-touch-icon.jpg",
-  "images/touch/favicon-16x16.png",
-  "images/touch/favicon-32x32.png",
-  "images/touch/favicon.ico",
-  "images/touch/mstile-150x150.png",
-  "js/barcode.js"
-  "js/install.js"
-  "js/main.js"
-  "js/pagamento.js"
-  "js/vendor/jquery.min.js",
-  "js/vendor/materialize-0.97.0.min.js",
-  "js/vendor/quagga.min.js"
-];
-// dev only
-if (typeof files == 'undefined') {
-  var files = [];
-} else {
-  files.push('./');
-}
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
 
-var CACHE_NAME = 'shopping-v13';
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
-self.addEventListener('activate', function(event) {
-  console.log('[SW] Activate');
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (CACHE_NAME.indexOf(cacheName) == -1) {
-            console.log('[SW] Delete cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
+importScripts(
+  "precache-manifest.95b90ed20476398228303071ee306f9e.js"
+);
 
-self.addEventListener('install', function(event){
-  console.log('[SW] Install');
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return Promise.all(
-      	files.map(function(file){
-      		return cache.add(file);
-      	})
-      );
-    })
-  );
-});
+workbox.skipWaiting();
+workbox.clientsClaim();
 
-self.addEventListener('fetch', function(event) {
-  console.log('[SW] fetch ' + event.request.url)
-  event.respondWith(
-    caches.match(event.request).then(function(response){
-      return response || fetch(event.request.clone());
-    })
-  );
-});
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.suppressWarnings();
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-self.addEventListener('notificationclick', function(event) {
-  console.log('On notification click: ', event);
-  clients.openWindow('/');
-});
+workbox.routing.registerRoute(/\//, workbox.strategies.staleWhileRevalidate(), 'GET');
