@@ -1,4 +1,4 @@
-# leitorqr
+# Leitor de Código QR
 Um Scanner QR Code com PWA - Progressive Web Application. O Leitor QR é o aplicativo da Web mais rápido e fácil de usar.
 
 ### Fácil de Usar
