@@ -29,7 +29,7 @@ if (typeof files == 'undefined') {
   files.push('./');
 }
 
-var CACHE_NAME = 'leitorqr-v1';
+var CACHE_NAME = 'shopping-v13';
 
 self.addEventListener('activate', function(event) {
   console.log('[SW] Activate');
