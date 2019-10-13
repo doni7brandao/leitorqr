@@ -1,7 +1,8 @@
 var files = [
   "index.html",
-  "styles.css",
   "manifest.json",
+  "styles.css",
+  "files.json",
   "main.201113f887d44acdfa77.bundle.js",
   "decoder.js",
   "images/photo-camera.svg",
@@ -13,6 +14,10 @@ var files = [
   "images/touch/favicon-32x32.png",
   "images/touch/favicon.ico",
   "images/touch/mstile-150x150.png",
+  "js/barcode.js"
+  "js/install.js"
+  "js/main.js"
+  "js/pagamento.js"
   "js/vendor/jquery.min.js",
   "js/vendor/materialize-0.97.0.min.js",
   "js/vendor/quagga.min.js"
