@@ -1,10 +1,10 @@
 CACHE MANIFEST
 
 CACHE:
-  ./files.json
   ./index.html
   ./manifest.json
   ./styles.css
+  ./files.json
   ./main.201113f887d44acdfa77.bundle.js
   ./decoder.js
   ./images/photo-camera.svg
