@@ -3,7 +3,13 @@ Um Scanner QR Code com PWA - Progressive Web Application. O Leitor QR é o aplic
 
 ### Fácil de Usar
 
-Aponte o leitor QR para a imagem abaixo e confira "**Make a copy**..."
+Aponte o leitor QR para a imagem abaixo e confira esta "**Aplicação**..."
 
-![1-make-copy](https://user-images.githubusercontent.com/1406149/29245471-feb7b034-7f97-11e7-9c0d-f06238e8362b.png)
+![1-make-copy](https://doni7brandao.github.io/leitorqr/images/template.png)
+
+
+### Acessando diretamente o
+
+> Link da aplicação: https://doni7brandao.github.io/leitorqr/
+
 
